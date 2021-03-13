@@ -3,13 +3,13 @@
 use PHPMailer\PHPMailer\PHPMailer;
 
 function enviarEmail($emailDest, $nomeDest, $assuntoEmail, $corpoEmail, $tipo){
-    include_once $_SERVER['DOCUMENT_ROOT'].'/cotacao_api/configs/database.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/configs/database.php';
 
     $conexao = new Database();
     $conexao = $conexao->getConnection();
 
-    include $_SERVER['DOCUMENT_ROOT'].'/cotacao_api/configs/emailAcount.php';
-    require $_SERVER['DOCUMENT_ROOT'].'/cotacao_api/vendor/autoload.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/configs/emailAcount.php';
+    require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
     $mail = new PHPMailer(true);
 
