@@ -4,4 +4,4 @@
     $conexao = new Database();
     $conexao = $conexao->getConnection();
 
-    echo $conexao;
+    echo "Oii";
