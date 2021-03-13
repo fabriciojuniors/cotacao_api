@@ -8,7 +8,7 @@
     $conexao = new Database();
     $conexao = $conexao->getConnection();
 
-    $user = new Users(null, null, null, null, null, $conexao);
+    $user = new Users(null,null, null, null, null, null, $conexao);
 
     $inicio = $_GET['inicio'];
     $fim = $_GET['fim'];
