@@ -18,7 +18,6 @@
                 $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->database_name, $this->username, $this->password);
                 //$this->conn->exec("SET NAMES utf8");
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Conexão estabelecida";
             }catch(PDOException $exception){
                 echo "Não foi possível estabelecer conexão com o banco de dados. Motivo: " . $exception->getMessage();
             }
