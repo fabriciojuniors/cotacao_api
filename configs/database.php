@@ -1,9 +1,11 @@
 <?php
+echo "oi";
     class Database {
         /*private $host = "127.0.0.1";
         private $database_name = "teste_produto";
         private $username = "postgres";
         private $password = "123";*/
+        
         private $host = "ec2-54-162-119-125.compute-1.amazonaws.com";
         private $database_name = "d6m7a1kferqtag";
         private $username = "knjeowajnpoevj";
