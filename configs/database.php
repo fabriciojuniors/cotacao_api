@@ -1,5 +1,5 @@
 <?php
-echo "oi";
+
     class Database {
         /*private $host = "127.0.0.1";
         private $database_name = "teste_produto";
@@ -24,4 +24,8 @@ echo "oi";
             return $this->conn;
         }        
     }
+
+    $conexao = new Database();
+    $conexao = $conexao->getConnection();
+    echo $conexao
 ?>
