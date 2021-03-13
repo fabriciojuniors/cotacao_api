@@ -3,8 +3,8 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . '/configs/headerGet.php';
 
     ///Inclui os arquivos de conexão com o BD e Classe Produtos
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/app/configs/database.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/app/classes/Product.php';    
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/configs/database.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Product.php';    
 
     $conexao = new Database();
     $conexao = $conexao->getConnection();
