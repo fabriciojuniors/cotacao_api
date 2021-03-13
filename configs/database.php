@@ -1,10 +1,13 @@
 <?php
     class Database {
-        private $host = "127.0.0.1";
+        /*private $host = "127.0.0.1";
         private $database_name = "teste_produto";
         private $username = "postgres";
-        private $password = "123";
-
+        private $password = "123";*/
+        private $host = "ec2-54-162-119-125.compute-1.amazonaws.com";
+        private $database_name = "d6m7a1kferqtag";
+        private $username = "knjeowajnpoevj";
+        private $password = "31b78b78108976cfa4f2720c2aa8c59373220d2676d027f2d31a371731d1b7e0";
         public $conn;
 
         public function getConnection(){
