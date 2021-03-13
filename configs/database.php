@@ -24,8 +24,4 @@
             return $this->conn;
         }        
     }
-
-    $conexao = new Database();
-    $conexao = $conexao->getConnection();
-    echo $conexao
 ?>
