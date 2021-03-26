@@ -17,7 +17,8 @@ function enviarEmail($emailDest, $nomeDest, $assuntoEmail, $corpoEmail, $tipo){
         
         $mail->isSMTP();                                          
         $mail->Host       = $smtp;                     
-        $mail->SMTPAuth   = true;                      
+        $mail->SMTPAuth   = true;   
+        $mail->SMTPSecure = "tls";                     
         $mail->Username   = $email;                    
         $mail->Password   = $senha;                    
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
