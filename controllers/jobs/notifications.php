@@ -1,6 +1,6 @@
 <?php
     include 'email.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'configs/database.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/configs/database.php';
 
     $conexao = new Database();
     $conexao = $conexao->getConnection();
@@ -24,6 +24,9 @@
     $tabelaMoedasCorpo = '';
 
     while($row = $query->fetch(PDO::FETCH_ASSOC, PDO::FETCH_NAMED)){
+        $sqlLog = "INSERT INTO log_email(tipo, destinatario, mensagem, data) values('Percorrer usuários', 'x', 'Sucesso', now())";
+        $queryLog = $conexao->prepare($sqlLog);
+        $queryLog->execute();
         $tabelaMoedasCorpo = '';
         $tabelaMoedas = '<table border=1 style="text-align: center"><thead><th>Moeda</th><th>Cotação Buscada</th><th>Cotação atual</th></thead><tbody>';
 
