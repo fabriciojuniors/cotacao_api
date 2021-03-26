@@ -1,10 +1,10 @@
 <?php
     //Incluir cabeçalho padrão para post
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/configs/headerGet.php';
+    include_once '../../configs/headerGet.php';
 
     ///Inclui os arquivos de conexão com o BD e Classe Produtos
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/configs/database.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Product.php';    
+    include_once '../../configs/database.php';
+    include_once '../../classes/Product.php';    
 
     $conexao = new Database();
     $conexao = $conexao->getConnection();

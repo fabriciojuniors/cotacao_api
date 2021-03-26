@@ -1,8 +1,8 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/configs/headerPost.php';
+    include_once'../../configs/headerPost.php';
 
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/configs/database.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/classes/Notification.php';    
+    include_once'../../configs/database.php';
+    include_once'../../classes/Notification.php';    
 
     $conexao = new Database();
     $conexao = $conexao->getConnection();
