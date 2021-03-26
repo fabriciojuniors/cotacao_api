@@ -1,6 +1,6 @@
 <?php
     include 'email.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/configs/database.php';
+    include_once '../../configs/database.php';
 
     $conexao = new Database();
     $conexao = $conexao->getConnection();
