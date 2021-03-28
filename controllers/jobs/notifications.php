@@ -59,7 +59,7 @@
         $tabelaMoedas .= $tabelaMoedasCorpo . '</tbody></table>';
 
         if($tabelaMoedasCorpo <> ''){
-            $email = '<div > <h3>Olá, '.$nome.'</h3> <p>Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p>  <p>Isso significa que a cotação baixou (moedas: '.$moedas.') e você já pode tirar aquele plano de férias no esterior da gaveta. </p>'.$tabelaMoedas.' <br> <p>Equipe Cotação APP.</p</div>';
+            $email = '<div > <h3>Olá, '.$nome.'</h3> <p>Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p>  <p>Isso significa que a cotação baixou (moedas: '.$moedas.') e você já pode tirar aquele plano de férias no exterior da gaveta. </p>'.$tabelaMoedas.' <br> <p>Equipe Cotação APP.</p</div>';
 
             enviarEmail($emailDest, $nome, 'A cotação baixo, venha conferir!', $email, "Notificação automática - cotação");
         }
