@@ -23,6 +23,7 @@
     $tabelaMoedas = '<table><thead><th>Moeda</th><th>Cotação Buscada</th><th>Cotação atual</th></thead><tbody>';
     $tabelaMoedasCorpo = '';
 
+
     while($row = $query->fetch(PDO::FETCH_ASSOC, PDO::FETCH_NAMED)){
         $sqlLog = "INSERT INTO log_email(tipo, destinatario, mensagem, data) values('Percorrer usuários', 'x', 'Sucesso', now())";
         $queryLog = $conexao->prepare($sqlLog);
@@ -59,7 +60,16 @@
         $tabelaMoedas .= $tabelaMoedasCorpo . '</tbody></table>';
 
         if($tabelaMoedasCorpo <> ''){
-            $email = '<div > <h3>Olá, '.$nome.'</h3> <p>Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p>  <p>Isso significa que a cotação baixou (moedas: '.$moedas.') e você já pode tirar aquele plano de férias no exterior da gaveta. </p>'.$tabelaMoedas.' <br> <p>Equipe Cotação APP.</p</div>';
+            $email = '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">';
+            $email .= '<div class="card" style="width: 30rem;">';
+            $email .= '<div class="card-body">';
+            $email .= '<h5 class="card-title">Olá, '. $nome. '</h5>';
+            $email .= '<p class="card-text">Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p> ';
+            $email .= '<p class="card-text">Isso significa que a cotação baixou (moedas: '.$moedas.') e você já pode tirar aquele plano de férias no exterior da gaveta. </p>';
+            $email .= $tabelaMoedas;
+            $email .= '</div></div>';
+            
+            //$email = '<div > <h3>Olá, '.$nome.'</h3> <p>Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p>  <p>Isso significa que a cotação baixou (moedas: '.$moedas.') e você já pode tirar aquele plano de férias no exterior da gaveta. </p>'.$tabelaMoedas.' <br> <p>Equipe Cotação APP.</p</div>';
 
             enviarEmail($emailDest, $nome, 'A cotação baixo, venha conferir!', $email, "Notificação automática - cotação");
         }
