@@ -61,7 +61,7 @@
 
         if($tabelaMoedasCorpo <> ''){
             $email = '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">';
-            $email .= '<div class="card" style="width: 30rem;">';
+            $email .= '<div class="card" style="width: 30rem;background-color: white;">';
             $email .= '<div class="card-body">';
             $email .= '<h5 class="card-title">Olá, '. $nome. '</h5>';
             $email .= '<p class="card-text">Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p> ';
