@@ -20,7 +20,7 @@
     $query->execute();
     
     $contemNotificacao = false;
-    $tabelaMoedas = '<table><thead><th>Moeda</th><th>Cotação Buscada</th><th>Cotação atual</th></thead><tbody>';
+    $tabelaMoedas = '<table style="--bs-table-bg:transparent;--bs-table-accent-bg:transparent;--bs-table-striped-color:#212529;--bs-table-striped-bg:rgba(0, 0, 0, 0.05);--bs-table-active-color:#212529;--bs-table-active-bg:rgba(0, 0, 0, 0.1);--bs-table-hover-color:#212529;--bs-table-hover-bg:rgba(0, 0, 0, 0.075);width:100%;margin-bottom:1rem;color:#212529;vertical-align:top;border-color:#dee2e6"><thead><th>Moeda</th><th>Cotação Buscada</th><th>Cotação atual</th></thead><tbody>';
     $tabelaMoedasCorpo = '';
 
 
@@ -29,7 +29,7 @@
         $queryLog = $conexao->prepare($sqlLog);
         $queryLog->execute();
         $tabelaMoedasCorpo = '';
-        $tabelaMoedas = '<table border=1 style="text-align: center"><thead><th>Moeda</th><th>Cotação Buscada</th><th>Cotação atual</th></thead><tbody>';
+        $tabelaMoedas = '<table style="--bs-table-bg:transparent;--bs-table-accent-bg:transparent;--bs-table-striped-color:#212529;--bs-table-striped-bg:rgba(0, 0, 0, 0.05);--bs-table-active-color:#212529;--bs-table-active-bg:rgba(0, 0, 0, 0.1);--bs-table-hover-color:#212529;--bs-table-hover-bg:rgba(0, 0, 0, 0.075);width:100%;margin-bottom:1rem;color:#212529;vertical-align:top;border-color:#dee2e6"><thead><th>Moeda</th><th>Cotação Buscada</th><th>Cotação atual</th></thead><tbody>';
 
         $sql = "SELECT u.nome, u.email, nu.moeda, nu.valor, nu.data_ativacao 
                   FROM notifica_usuario nu
@@ -60,9 +60,8 @@
         $tabelaMoedas .= $tabelaMoedasCorpo . '</tbody></table>';
 
         if($tabelaMoedasCorpo <> ''){
-            $email = '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">';
-            $email .= '<div class="card" style="width: 30rem;background-color: white;">';
-            $email .= '<div class="card-body">';
+            $email = '<div style="width: 30rem; background-color: white; position:relative;display:flex;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:1px solid rgba(0,0,0,.125);border-radius:.25rem">';
+            $email .= '<div style="flex:1 1 auto;padding:1rem 1rem">';
             $email .= '<h5 class="card-title">Olá, '. $nome. '</h5>';
             $email .= '<p class="card-text">Lembra a notificação que você programou no <strong>Cotação APP</strong>? Ela chegou!</p> ';
             $email .= '<p class="card-text">Isso significa que a cotação baixou (moedas: '.$moedas.') e você já pode tirar aquele plano de férias no exterior da gaveta. </p>';
